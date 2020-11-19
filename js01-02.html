@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 1일차 2번(onload, DOMContentLoaded, jquery)</title>
+    <script src="./jquery-3.5.1.js"></script>
+
+    <script>
+        // var btn = document.getElementById("btn1");
+        //     btn.addEventListener("click",function(){
+        //         alert("버튼을 클릭했습니다");
+        //     });
+
+        /* 1. onload */
+        // window.onload = function(){
+        //     var btn = document.getElementById("btn1");
+        //     btn.addEventListener("click",function(){
+        //         alert("버튼을 클릭했습니다");
+        //     }); 
+        // }
+
+        /* 2. DOMContentLoaded*/
+        window.addEventListener("DOMContentLoaded", function(){
+            var btn = document.getElementById("btn1");
+            btn.addEventListener("click",function(){
+             alert("버튼을 클릭했습니다");
+            }); 
+        });
+
+        // /* 3. jquery의 ready 이벤트 사용 */
+        // $(document).ready(function(){
+        //     $("#btn1").on("click", function(){
+        //         alert("jquery를 이용하여 버튼을 클릭했습니다.");
+        //     });
+        // });
+    </script>
+</head>
+<body>
+    <script>
+        // var btn = document.getElementById("btn1");
+        //     btn.addEventListener("click",function(){
+        //         alert("버튼을 클릭했습니다");
+        //     }); 
+    </script>
+
+    <button id="btn1">버튼 클릭시 알림창</button>
+
+    <a href="javascript:alert('클릭하셨어요?')">클릭해보세요</a>
+    
+    <script>
+        // var btn = document.getElementById("btn1");
+        //     btn.addEventListener("click",function(){
+        //         alert("버튼을 클릭했습니다");
+        //     });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 2일차 4번(조건문)</title>
+    <script>
+        console.log("\n-----조건문-----\n");
+        var score = 90;
+        var myScore = prompt("점수를 입력하세요");
+        if(myScore>score){
+            console.log("축하합니다");
+        }
+        console.log("당신의 점수는"+myScore+"입니다.")
+
+        console.log("\n-----if else-----\n");
+        var result = prompt("당신의 탕수육 먹는 스타일은 부먹입니까? 찍먹입니까?");
+        if(result=="부먹"){
+            console.log("당신의 입맛은 최고");
+        }
+        else{
+            console.log("우~");
+        }
+
+        console.log("\n-----else lf-----\n");
+        var myScore = prompt("당신의 점수를 입력하세요","80"); //기본값 80점
+        if(myScore>=90){
+            console.log("당신의 점수는 "+myScore+"점이고, A학점입니다.");
+        }
+        else if(myScore>=80){
+            console.log("당신의 점수는 "+myScore+"점이고, B학점입니다.");
+        }
+        else if(myScore>=70){
+            console.log("당신의 점수는 "+myScore+"점이고, C학점입니다.");
+        }
+        else if(myScore>=60){
+            console.log("당신의 점수는 "+myScore+"점이고, D학점입니다.");
+        }
+        else{
+            console.log("당신의 점수는 "+myScore+"점이고, F학점입니다.");
+        }
+
+        /*문제 1) 중국집에 가서 먹고 싶은 메뉴를 선택하는 프로그램을 작성.
+         5가지 음식을 하나씩 비교. else if문을 사용하여 만드세요.
+         짜장면, 짬뽕, 볶음밥, 잡채밥, 우동 */
+        
+        var menu = prompt("먹고 싶은 메뉴를 입력하시오","볶음밥");
+        if(menu=="짜장면"){
+            console.log("사장님 "+menu+"주세요~!");
+        }
+        else if(menu=="짬뽕"){
+            console.log("사장님 "+menu+"주세요~!");
+        }
+        else if(menu=="볶음밥"){
+            console.log("사장님 "+menu+"주세요~!");
+        }
+        else if(menu=="잡채밥"){
+            console.log("사장님 "+menu+"주세요~!");
+        }
+        else if(menu=="우동"){
+            console.log("사장님 "+menu+"주세요~!");
+        }
+        else{
+            console.log("없는 메뉴입니다.");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

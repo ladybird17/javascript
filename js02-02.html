@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 2일차 2번(산술연산)</title>
+    <script>
+        var x = 32;
+        var total = 100+ x*2/4 - 3;
+        var div = x/10;
+        var mod = x%2;
+
+        console.log("x"+x);
+        console.log("100+x*2/4 - 3 ="+total);
+        console.log("x/10 ="+div);
+        console.log("x%2 = "+mod);
+
+        var y = prompt("숫자를 입력하세요");
+        result = y%2;
+        //비교연산자(3항연산자) 대신 사용하는 if문
+        if(result==0){
+            console.log("입력하신 숫자는 짝수입니다.");
+        }
+        else{
+            console.log("입력하신 숫자는 홀수입니다.");
+        }
+
+        console.log("\n-----증감 연산자-----\n");
+        var a = 10;
+        console.log(a);
+        a++;
+        console.log(a);
+        a--;
+        console.log(a);
+
+        console.log("\n-----전위,후위 연산-----\n");
+        var test=10;
+        console.log(test);
+        console.log(++test);
+        console.log(test);
+        console.log(--test);
+        console.log(test);
+
+        var test2 = 10;
+        console.log(test2);
+        console.log(test2++);
+        console.log(test2);
+        console.log(test2--);
+        console.log(test2);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

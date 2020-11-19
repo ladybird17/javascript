@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 2일차 3번(논리연산자)</title>
+    <script>
+        console.log("\n-----논리연산자-----\n");
+
+        var x = true;
+        var y = false;
+
+        console.log("x="+x+", y="+y);
+        console.log("x&&y ="+ (x&&y));
+        console.log("x||y ="+ (x||y));
+        console.log("!x ="+ (!x));
+        console.log("(3>2)&&(3<4)="+((3>2)&&(3<4)));
+        console.log("(3==-2)||(-1<0)="+((3==-2)||(-1<0)));
+
+        console.log("\n-----문자열연산자-----\n");
+        console.log("abc"+123);
+        console.log("abc"+true);
+        console.log(23+35+"abc"); //23+35가 먼저 더해지고 abc가 나옴
+        console.log("abc"+23+35); //abc와 23이 먼저 더해져 abc23이 되고 또 35가 더해져 abc2335가 된다
+        console.log("abc"+(23+35));
+    </script>
+</head>
+<body>
+</body>
+</html>

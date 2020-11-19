@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 1일차 3번(자바스크립트 HTML콘텐츠, 다이얼로그)</title>
+    <script>
+        window.addEventListener("DOMContentLoaded",function(){
+            /*자바스크립트로 HTML 콘텐츠를 웹페이지에 직접 삽입*/
+            document.write("<h3>Welcome!</h3>");
+            document.write("2+5는 <br>");
+            document.write("<mark>7입니다.</mark>");
+
+            /*프롬프트 다이얼로그*/
+            var ret = prompt("이름을 입력하세요");
+
+            if (ret==null){
+                alert("이름을 입력하세요");
+            }
+            else if (ret==""){
+                alert("이름을 입력하세요");
+            }
+            else {
+                alert("이름은"+ ret + "입니다.");
+            }
+
+            /*확인 다이얼로그 (true,false) */
+            var ret2 = confirm("전송할까요");
+            alert(ret2);
+
+            if(ret2==true){
+                document.write("<p>네, 전송하세요</p>");
+            }
+            else{
+                document.write("<p>아니요</p>"); /*웹사이트 화면에다가 씀*/
+            }
+
+            /*경고 다이얼로그 (단순히 띄우기만함) */
+            alert("완료됐습니다");
+            
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

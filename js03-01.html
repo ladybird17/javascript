@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 3일차 1번(switch문)</title>
+    <script>
+        var fruits = "사과";
+        var price =0;
+        switch(fruits){
+            case "바나나":
+                price=200;
+                break;
+
+            case "사과":
+                price=300;
+                break;
+
+            case "체리":
+                price=400;
+                break;
+
+            default:
+                console.log("팔지 않습니다.");
+                price=0;
+        }
+
+        console.log(price);
+
+        fruits = "사과";
+        price = 0;
+        if(fruits=="바나나"){
+            price = 200;
+        }
+        else if(fruits=="사과"){
+            price = 300;
+        }
+        else if(fruits=="체리"){
+            price = 400;
+        }
+        else{
+            price = 0;
+            console.log("팔지 않습니다");
+        }
+        
+        console.log(price);
+
+        var day = new Date().getDay();
+        var toDay = "";
+        switch(day){
+            case 1:
+                toDay = "월요일";
+                break;
+            case 2:
+                toDay = "화요일";
+                break;
+            case 3:
+                toDay = "수요일";
+                break;
+            case 4:
+                toDay = "목요일";
+                break;
+            case 5:
+                toDay = "금요일";
+                break;
+            default:
+                toDay = "주말";
+                break;
+        }
+        console.log(toDay);
+
+        //문제1 : 위의 요일 입력하는 부분을 사용자가 날짜 입력하면 해당 요일이 출력되는 프로그램을 작성하세요
+        //else if문으로 작성. 사용자 입력방식은 "2020-11-17"
+        var myDate = prompt("원하는 날짜를 입력하시오","2020-11-17");
+        var day = new Date(myDate).getDay();
+        var toDay = "";
+        if(day==1){
+            toDay = "월요일";
+        }
+        else if(day==2){
+            toDay = "화요일";
+        }
+        else if(day==3){
+            toDay = "수요일";
+        }
+        else if(day==4){
+            toDay = "목요일";
+        }
+        else if(day==5){
+            toDay = "금요일";
+        }
+        else{
+            toDay = "주말";
+        }
+        console.log(myDate + "의 요일은 "+toDay+"입니다.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
