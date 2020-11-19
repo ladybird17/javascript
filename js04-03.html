@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 4일차 3번 (함수만들기, 전역함수)</title>
+    <script>
+        console.log("-----계산기1-----");
+        function add1(){
+            var a = 10;
+            var b = 5;
+            console.log("두 수의 합은 : "+(a+b));
+        }
+        function sub1(){
+            var a = 10;
+            var b = 5;
+            console.log("두 수의 차 : "+(a-b));
+        }
+        function mul1(){
+            var a = 10;
+            var b = 5;
+            console.log("두 수의 곱 : "+(a*b));
+        }
+        function div1(){
+            var a = 10;
+            var b = 5;
+            console.log("두 수를 나눈 몫 : "+(a/b));
+        }
+
+        add1();
+        sub1();
+        mul1();
+        div1();
+
+
+        console.log("-----계산기2-----");
+        function add2(a,b){
+            console.log("두 수의 합은 : "+(a+b));
+        }
+        function sub2(a,b){
+            console.log("두 수의 차 : "+(a-b));
+        }
+        function mul2(a,b){
+            console.log("두 수의 곱 : "+(a*b));
+        }
+        function div2(a,b){
+            console.log("두 수를 나눈 몫 : "+(a/b));
+        }
+
+        add1(10,5);
+        sub1(10,5);
+        mul1(10,5);
+        div1(10,5);
+
+        console.log("-----계산기3-----");
+        function add3(){
+            var a = 10;
+            var b = 5;
+            return (a+b);
+        }
+        function sub3(){
+            var a = 10;
+            var b = 5;
+            return (a-b);
+        }
+        function mul3(){
+            var a = 10;
+            var b = 5;
+            return (a*b);
+        }
+        function div3(){
+            var a = 10;
+            var b = 5;
+            return (a/b);
+        }
+
+        var add3Result = add3();
+        console.log("두 수의 합은 : "+add3Result);
+        //또는
+        console.log("두 수의 합은 : "+add3())
+
+        var sub3Result = sub3();
+        console.log("두 수의 차 : "+ sub3Result);
+
+        var mul3Result = mul3();
+        console.log("두 수의 곱 : "+mul3Result);
+
+        var div3Result = div3();
+        console.log("두 수를 나눈 몫 : "+div3Result);
+
+
+        console.log("-----계산기4-----");
+
+        function add4(a,b){
+            return (a+b);
+        }
+        function sub4(a,b){
+            return (a-b);
+        }
+        function mul4(a,b){
+            return (a*b);
+        }
+        function div4(a,b){
+            return (a/b);
+        }
+
+        var add4Result = add4(10,5);
+        console.log("두 수의 합 : "+ add4Result);
+
+        var sub4Result = sub4(10,5);
+        console.log("두 수의 차 : "+ sub4Result);
+
+        var mul4Result = mul4(10,5);
+        console.log("두 수의 곱 : "+ mul4Result);
+
+        var div4Result = div4(10,5);
+        console.log("두 수를 나눈 몫 : "+ div4Result);
+
+
+        //문제 4. 사용자 입력(숫자)를 받아서 해당하는 단수의 구구단을 출력하는 프로그램 작성
+        // 구구단 부분을 함수로 만들기
+        console.log("-----구구단 단수 입력받아 출력-----");
+
+        function gugudan(dan){
+            for(i=1;i<10;i++){
+                console.log(dan+"*"+i+"="+dan*i);
+            }
+        }
+
+        var gugudanResult = gugudan(prompt("원하는 구구단의 단수를 입력하시오(2~9)","9"));
+
+
+
+        //문제 5. 매개 변수를 3개 받는 함수 하나를 생성하여 입력된 기호에 따라 사칙연산을 진행하는 프로그램 작성
+        /*
+        첫번째, 두번째 매개 변수는 계산할 데이터.
+        세번째 매개변수는 사칙연산을 위한 기호
+        */ 
+        console.log("-----계산기 기호 입력받아 출력-----");
+        function myCal(a,b,c){
+            if(c=="+"){
+                return a+b;
+            }
+            else if(c=="-"){
+                return a-b;
+            }
+            else if(c=="*"){
+                return a*b;
+            }
+            else if(c=="/"){
+                return a/b;
+            }
+        }
+
+        var myCalResult = myCal(
+            Number(prompt("연산할 첫번째 수를 입력하시오.")),
+            Number(prompt("연산할 두번째 수를 입력하시오.")),
+            prompt("원하는 연산을 입력하시오.(+,-,*,/)")
+        );
+
+        console.log(myCalResult);
+
+
+
+        console.log("-----전역 함수-----");
+        
+        var num = prompt("숫자를 입력하세요");
+        //isNaN() 은 숫자가 아니면 true
+        if (isNaN(num)==true){
+            //숫자가 아닐때
+            console.log("숫자가 입력되지 않았습니다.")
+        }
+        else{
+            //숫자일때
+            num = parseInt(num);
+            //또는
+            num = Number(num);
+            console.log(num*num);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
