@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 5일차 1번(객체, 배열)</title>
+    <script>
+        //현재시간을 기준으로 시간 관련 객체를 생성하고 변수 today에 대입
+        var today = new Date();
+        console.log("현재시간 : "+today.toUTCString()); //toUTCString() 메서드. 그냥 toString()하면 대한민국 표준시 나옴
+
+        //new 키워드를 사용하여 문자열 객체를 생성하고 변수 myStr에 대입
+        var myStr = new String("자바스크립트 공부하기");
+        console.log("myStr의 내용 : "+ myStr);
+        console.log("myStr의 길이 : "+ myStr.length);
+
+        console.log("----------배열 사용하기-----------");
+        var plots = [20, 5, 8, 15, 20];
+        console.log("var plots = [20, 5, 8, 15, 20]");
+        for (var i = 0; i<5; i++){
+            var size = plots[i];
+            var tmp = "";
+            while(size>0){
+                tmp += "*";
+                size--;
+            }
+            console.log(tmp+plots[i]);
+        }
+
+        console.log("----------배열 자동 크기 테스트-----------");
+        var arr = [1,2,3];
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+
+        var arr1 = [];
+
+        console.log(arr.length);
+        console.log(arr1.length);
+        console.log(arr[2]);
+        console.log(arr1[0]); //undefined라고 출력되는 이유는 arr1이 빈 배열이기 때문에 index가 없음
+
+        arr[3] = 40;
+        arr[4] = 50; //크기가 3개까지라 인덱스 존재하지 않아도 만들면 데이터가 들어감
+        console.log(arr[3]); // 자동으로 크기가 5로 커짐
+        console.log(arr[4]);
+
+        console.log("----------배열 속성-----------");
+        var fruits = ["바나나","오렌지","사과","망고"];
+        console.log("배열 fruits의 길이 : "+fruits.length);
+        console.log("배열 fruits의 내용 전부 출력 : "+fruits.toString());
+        console.log("배열 fruits의 내용 전부 출력 : "+fruits.join("&"));
+        fruits.push('파인애플');
+        console.log("push() 사용 후 배열 : "+fruits);
+        fruits.pop();
+        fruits.pop();
+        fruits.pop();
+        console.log("pop() 사용 후 배열 : "+fruits);
+        fruits.unshift("사과");
+        fruits.unshift("배");
+        fruits.unshift("복숭아");
+        fruits.unshift("수박");
+        fruits.unshift("참외");
+        console.log("unshift() 사용 후 배열 : "+fruits);
+        fruits.shift();
+        console.log("shift() 사용 후 배열 : "+fruits);
+
+        var fruits = ["바나나","오렌지","사과","망고"];
+        console.log("원본 배열 fruits : "+ fruits.toString());
+        fruits.splice(2,1,"파인애플","키위"); //인덱스2에서 1개 데이터 삭제하고 그 자리에 삽입
+        fruits.splice(2,0,"두리안","자몽"); // 삭제 안하고 삽입
+        console.log("splice() 사용 후 배열 : " + fruits);
+        delete fruits[2];
+        console.log("delete 사용 후 배열 : ");
+        console.log(fruits); //delete한 부분이 empty라고 적혀있고 공간이 남아있다.
+        
+        console.log("slice 사용 전 배열 fruits : "+fruits);
+        var fr = fruits.slice(3);
+        console.log("slice 사용해서 만든 배열 fr : "+fr);
+
+        var fr2 = fruits.slice(1,3);
+        console.log("slice 사용해서 만든 배열 fr2 : "+fr2);
+
+        var fr1 = ["사과", "복숭아", "배"];
+        var fr2 = ["파인애플", "자몽", "체리"];
+        var fr3 = fr1.concat(fr2);
+        console.log("국내 과일 배열 : "+fr1);
+        console.log("국내 과일 배열 : "+fr2);
+        console.log("concat 사용해서 만든 배열 fr3 : " + fr3);
+
+        var fruits = ["banana","orange","apple","mango"];
+        console.log("영어버전 과일 배열 fruits : "+fruits.toString());
+        fruits.sort();
+        console.log(fruits.toString());
+        fruits.reverse();
+        console.log(fruits.toString());
+
+        console.log("----------Array 객체로 배열 사용-----------");
+        // var degrees = new Array();
+        // degrees[0] = 15.1;
+        // degrees[1] = 15.4;
+        // degrees[2] = 16.1;
+        // degrees[3] = 17.5;
+        // degrees[4] = 19.2;
+        // degrees[5] = 21.4;
+
+        // var degrees = new Array(15.1, 15.4, 16.1, 17.5, 19.2, 21.4);
+
+        var degrees = [15.1, 15.4, 16.1, 17.5, 19.2, 21.4];
+
+        var sum = 0;
+        for (var i=0; i<degrees.length; i++){
+            sum += degrees[i];
+        }
+        console.log("평균 온도는" + sum/degrees.length);
+
+
+        console.log("----------배열의 요소로 저장 가능한 데이터 타입-----------");
+        function convertFunction(){
+            console.log("converFunction 함수");
+        }
+        var any = [];
+        any[0] = 0;
+        any[1] = 5.5;
+        any[2] = "이미지 벡터";
+        any[3] = new Date();
+        any[4] = convertFunction;
+        any[5] = [1,2,3,4,5];
+        any[6] = {name:"말리부",color:"검정",type:"세단"};
+
+        console.log(any[0]);
+        console.log(any[1]);
+        console.log(any[2]);
+        console.log(any[3]);
+        console.log(any[4]);
+        console.log(any[5]);
+        console.log(any[6]);
+        console.log(any);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

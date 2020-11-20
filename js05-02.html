@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 5일차 2번(object)</title>
+    <script>
+        var car = {name:"말리부",type:"세단",color:"검정",size:"중형"};
+        
+        console.log(car.name);
+        console.log(car.size);
+
+        car.color = "회색";
+        console.log(car.color);
+
+
+// 1329226	창가쫃에 캣타워두니까 한참멍때림 [3]	현쥬갤로그로 이동합니다.	15:03	31	2
+// 1329225	믿을 수 없을만큼 완전히 돌아버린 우리집 고먐미 [3]	꽁짜플레이갤로그로 이동합니다.	15:01	39	3
+// 1329224	목욕 안시켜주면 등쪽은 원래 떡짐? [1]	ㅇㅇ(59.6)	14:58	19	0
+        var arrbbs1 = [1329226,"창가쫃에 캣타워두니까 한참멍때림", "현쥬", "15:03", 31,	2];
+        var arrbbs2 = [1329225, "믿을 수 없을만큼 완전히 돌아버린 우리집 고먐미", "꽁짜플레이", "15:01", 39, 3];
+        var arrbbs3 = [1329224,	"목욕 안시켜주면 등쪽은 원래 떡짐?", "ㅇㅇ", "14:58", 19, 0];
+
+        var objbbs1 = {num:1329226,title:"창가쫃에 캣타워두니까 한참멍때림",id:"현쥬", time:"15:03", view:31, like:2};
+        var objbbs2 = {num:1329225,title:"믿을 수 없을만큼 완전히 돌아버린 우리집 고먐미", id:"꽁짜플레이", time:"15:01", view:39, like:3};
+        var objbbs3 = {num:1329224,title:"목욕 안시켜주면 등쪽은 원래 떡짐?", id:"ㅇㅇ", time:"14:58", view:19, like:0};
+
+        console.log(arrbbs1[0]);
+        console.log(arrbbs1[1]);
+        console.log(arrbbs1[2]);
+        console.log(arrbbs1[3]);
+        console.log(arrbbs1[4]);
+        console.log(arrbbs1[5]);
+
+        console.log(objbbs1.num);
+        console.log(objbbs1.title);
+        console.log(objbbs1.id);
+        console.log(objbbs1.time);
+        console.log(objbbs1.view);
+        console.log(objbbs1.like);
+
+        console.log("----------for문 출력-----------");
+        for(var i =0; i<arrbbs2.length; i++){
+            console.log(arrbbs2[i]);
+        }
+
+        console.log("----------sort 사용 후 for문 출력-----------");
+        arrbbs3.sort();
+        for(var i =0; i<arrbbs3.length; i++){
+            console.log(arrbbs3[i]);
+        } //배열 사용시 sort 사용하면 순서가 바껴서 나중에 오류남
+
+        console.log("----------object 타입을 for문 출력-----------");
+        for(var data in objbbs2){
+            console.log(objbbs2[data]);
+        }
+
+//각각의 게시물은 object 타입으로 저장하고, 
+//이렇게 생성된 object 타입 변수 여러개를 하나의 배열에 넣어서 한번에 전송.
+        var arrbbs = [];
+        arrbbs[0] = objbbs1;
+        arrbbs[1] = objbbs2;
+        arrbbs[2] = objbbs3;
+
+        console.log(arrbbs);
+
+        console.log("---------arrbbs를 통해 arrbbs1,2,3 전부 for문 출력-----------");
+        for(var i =0; i<arrbbs.length; i++){
+            console.log(arrbbs[i].num);
+            console.log(arrbbs[i].title);
+            console.log(arrbbs[i].id);
+            console.log(arrbbs[i].time);
+            console.log(arrbbs[i].view);
+            console.log(arrbbs[i].like);
+        }
+
+        document.write("<table border=1>");
+        document.write("<thead>");
+        document.write("<tr>");
+        document.write("<th>번호</th>");
+        document.write("<th>제목</th>");
+        document.write("<th>글쓴이</th>");
+        document.write("<th>등록날짜</th>");
+        document.write("<th>조회수</th>");
+        document.write("<th>추천</th>");
+        document.write("</tr>");
+        document.write("</thead>");
+        for (var i = 0; i<arrbbs.length; i++){
+            document.write("<tr>");
+            document.write("<td>"+arrbbs[i].num+"</td>");
+            document.write("<td>"+arrbbs[i].title+"</td>");
+            document.write("<td>"+arrbbs[i].id+"</td>");
+            document.write("<td>"+arrbbs[i].time+"</td>");
+            document.write("<td>"+arrbbs[i].view+"</td>");
+            document.write("<td>"+arrbbs[i].like+"</td>"); //td6개 필요
+            document.write("</tr>"); 
+        }
+        
+        document.write("<tbody>");
+        document.write("</table>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
